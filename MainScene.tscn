@@ -239,8 +239,4 @@ text = "Test"
 margin_right = 68.0
 margin_bottom = 64.0
 
-[node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -6.0
-margin_top = 1.0
-margin_right = 593.0
-margin_bottom = 363.0
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
