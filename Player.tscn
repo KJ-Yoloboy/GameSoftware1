@@ -37,7 +37,6 @@ region_rect = Rect2( 560.049, 97.8135, 5.59827, 3.73216 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Sprite"]
 frames = SubResource( 2 )
 animation = "walk"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
