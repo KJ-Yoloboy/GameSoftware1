@@ -6,8 +6,9 @@ export(String, FILE) var next_scene_path: = ""
 
 
 func _on_button_up() -> void:
-	PlayerData.reset()
-	get_tree().change_scene(next_scene_path)
+	#PlayerData.reset()
+	
+	get_tree().change_scene("res://MainScene.tscn")
 
 
 func _get_configuration_warning() -> String:
