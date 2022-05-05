@@ -16,28 +16,35 @@ onready var ui = get_node("/root/MainScene/CanvasLayer/UI")
 func _physics_process(delta):
 	
 	vel.x = 0	
-
+	# applying the velocity
+	
 	# movement inputs
+	# jump inputs
+	if Input.is_action_pressed("jump") and is_on_floor():
+		vel.y -= jumpForce
+		$AnimatedSprite.play("jump")
+	
+	
 	if Input.is_action_pressed("move_left"):
 		vel.x -= speed
-	if Input.is_action_pressed("move_right"):
+		$AnimatedSprite.play("walk")
+	elif Input.is_action_pressed("move_right"):
 		vel.x += speed
-	
-	# applying the velocity
+		$AnimatedSprite.play("walk")
+	else:
+		$AnimatedSprite.play("idle")
+
+		
 	vel = move_and_slide(vel, Vector2.UP)
 	
 	# gravity
 	vel.y += gravity * delta
-		
-	# jump inputs
-	if Input.is_action_pressed("jump") and is_on_floor():
-		vel.y -= jumpForce
 	
 	# sprite direction
 	if vel.x < 0:
-		sprite.flip_h = true
+		$AnimatedSprite.flip_h = true
 	elif vel.x > 0:
-		sprite.flip_h = false
+		$AnimatedSprite.flip_h = false
 
 # called when we run into a coin
 func collect_coin (value):
