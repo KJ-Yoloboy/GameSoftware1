@@ -234,8 +234,6 @@ moveDist = 600
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="UI" parent="CanvasLayer" instance=ExtResource( 6 )]
-margin_left = 3.0
-margin_right = 3.0
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 margin_right = 68.0
