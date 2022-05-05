@@ -18,13 +18,12 @@ func _physics_process(delta):
 	vel.x = 0	
 	# applying the velocity
 	
-	# movement inputs
 	# jump inputs
 	if Input.is_action_pressed("jump") and is_on_floor():
 		vel.y -= jumpForce
 		$AnimatedSprite.play("jump")
 	
-	
+	# movement inputs
 	if Input.is_action_pressed("move_left"):
 		vel.x -= speed
 		$AnimatedSprite.play("walk")
@@ -34,10 +33,9 @@ func _physics_process(delta):
 	else:
 		$AnimatedSprite.play("idle")
 
-		
+	# gravity
 	vel = move_and_slide(vel, Vector2.UP)
 	
-	# gravity
 	vel.y += gravity * delta
 	
 	# sprite direction

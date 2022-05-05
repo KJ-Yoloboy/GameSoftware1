@@ -1,6 +1,6 @@
 extends Area2D
 
-export var value = 1
+export var value = 10
 
 func _process(delta):
 	rotation_degrees += 90 * delta
