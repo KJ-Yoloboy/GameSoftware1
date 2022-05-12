@@ -21,17 +21,26 @@ func _physics_process(delta):
 	# jump inputs
 	if Input.is_action_pressed("jump") and is_on_floor():
 		vel.y -= jumpForce
-		$AnimatedSprite.play("jump")
 	
 	# movement inputs
 	if Input.is_action_pressed("move_left"):
 		vel.x -= speed
-		$AnimatedSprite.play("walk")
 	elif Input.is_action_pressed("move_right"):
 		vel.x += speed
+
+
+# animation logic
+
+	if Input.is_action_pressed("jump") and is_on_floor():
+		$AnimatedSprite.play("jump")
+	elif Input.is_action_pressed("move_left") and is_on_floor():
 		$AnimatedSprite.play("walk")
-	else:
+	elif Input.is_action_pressed("move_right") and is_on_floor():
+		$AnimatedSprite.play("walk")
+	elif is_on_floor():
 		$AnimatedSprite.play("idle")
+
+
 
 	# gravity
 	vel = move_and_slide(vel, Vector2.UP)

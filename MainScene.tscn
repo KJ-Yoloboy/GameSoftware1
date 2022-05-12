@@ -6,20 +6,23 @@
 [ext_resource path="res://Coin.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://UI.tscn" type="PackedScene" id=6]
-[ext_resource path="res://added/images/Knipsel.PNG" type="Texture" id=7]
+[ext_resource path="res://added/images/background.png" type="Texture" id=7]
 [ext_resource path="res://Audio/CoinCollect.tres" type="AudioStream" id=8]
 
 [node name="MainScene" type="Node2D"]
 position = Vector2( 7, -1 )
 
-[node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -872.0
-margin_top = -610.0
-margin_right = 122.0
-margin_bottom = -169.0
-rect_min_size = Vector2( 0.053, 0 )
-rect_scale = Vector2( 3.532, 3.712 )
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2"]
+margin_left = 6.0
+margin_top = -222.0
+margin_right = 1926.0
+margin_bottom = 858.0
 texture = ExtResource( 7 )
+expand = true
+stretch_mode = 2
 
 [node name="Tile" parent="." instance=ExtResource( 1 )]
 position = Vector2( 192, 512 )
@@ -122,12 +125,6 @@ position = Vector2( 1278, 576 )
 
 [node name="Tile30" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1214, 576 )
-
-[node name="Tile36" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1339, 450 )
-
-[node name="Tile35" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1339, 514 )
 
 [node name="Tile34" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1340, 576 )
@@ -234,6 +231,10 @@ moveDist = 600
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="UI" parent="CanvasLayer" instance=ExtResource( 6 )]
+margin_left = 4.0
+margin_top = 20.0
+margin_right = 4.0
+margin_bottom = 20.0
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 margin_right = 68.0
@@ -241,3 +242,6 @@ margin_bottom = 64.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+
+[node name="Coin9" parent="." instance=ExtResource( 4 )]
+position = Vector2( 512, 224 )
