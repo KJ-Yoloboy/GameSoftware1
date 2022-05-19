@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Tile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://CameraController.gd" type="Script" id=2]
@@ -7,7 +7,12 @@
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://UI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://added/images/background.png" type="Texture" id=7]
-[ext_resource path="res://Audio/CoinCollect.tres" type="AudioStream" id=8]
+[ext_resource path="res://added/audio/videoplayback.mp3" type="AudioStream" id=8]
+[ext_resource path="res://Tiles/platformPack_tile011.png" type="Texture" id=9]
+[ext_resource path="res://CollisionShape2D.gd" type="Script" id=10]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 34.9203
 
 [node name="MainScene" type="Node2D"]
 position = Vector2( 7, -1 )
@@ -99,9 +104,6 @@ position = Vector2( 704, 576 )
 [node name="Tile24" parent="." instance=ExtResource( 1 )]
 position = Vector2( 896, 576 )
 
-[node name="Tile12" parent="." instance=ExtResource( 1 )]
-position = Vector2( 192, 576 )
-
 [node name="Tile13" parent="." instance=ExtResource( 1 )]
 position = Vector2( 384, 576 )
 
@@ -177,8 +179,13 @@ position = Vector2( 2294, 640 )
 [node name="Tile51" parent="." instance=ExtResource( 1 )]
 position = Vector2( 2167, 515 )
 
+[node name="Tile35" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2422, 640 )
+
+[node name="Tile12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2358, 640 )
+
 [node name="Camera" type="Camera2D" parent="."]
-visible = false
 position = Vector2( 512, 300 )
 drag_margin_left = 0.0
 drag_margin_top = 0.0
@@ -242,6 +249,46 @@ margin_bottom = 64.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+autoplay = true
 
 [node name="Coin9" parent="." instance=ExtResource( 4 )]
-position = Vector2( 512, 224 )
+position = Vector2( 2549, 444 )
+
+[node name="Tile54" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2675, 640 )
+
+[node name="Tile55" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2803, 640 )
+
+[node name="Tile56" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2867, 640 )
+
+[node name="Tile57" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2931, 450 )
+
+[node name="Tile59" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3250, 450 )
+
+[node name="Tile58" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2995, 450 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 3474, 284 )
+scale = Vector2( 2.29688, 2.39063 )
+texture = ExtResource( 9 )
+
+[node name="StaticBody2D" type="Area2D" parent="Sprite"]
+position = Vector2( -1512.49, -118.797 )
+scale = Vector2( 0.435374, 0.418301 )
+
+[node name="Portal" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 3474, 284 )
+scale = Vector2( 2.29688, 2.39063 )
+shape = SubResource( 1 )
+script = ExtResource( 10 )
+
+[node name="Tile36" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2739, 640 )
+
+[connection signal="body_entered" from="Enemy2" to="Camera" method="_on_Enemy2_body_entered"]
+[connection signal="body_entered" from="Sprite/StaticBody2D" to="Sprite/StaticBody2D/Portal" method="_on_StaticBody2D_body_entered"]

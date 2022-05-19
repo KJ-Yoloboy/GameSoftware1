@@ -14,6 +14,9 @@ onready var ui = get_node("/root/MainScene/CanvasLayer/UI")
 
 # physics loop - same as Unity's "FixedUpdate" function
 func _physics_process(delta):
+	if (position.y > 875):
+		die()
+	
 	
 	vel.x = 0	
 	# applying the velocity
