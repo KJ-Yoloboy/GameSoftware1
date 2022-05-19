@@ -2,7 +2,7 @@
 
 [ext_resource path="res://CameraController.gd" type="Script" id=1]
 [ext_resource path="res://added/audio/videoplayback.mp3" type="AudioStream" id=2]
-[ext_resource path="res://added/images/junfle-tropical-forest-landscape-horizontal-seamless-background-games-apps-design-nature-woods-trees-bushes-flora-vector-215866574.jpg" type="Texture" id=3]
+[ext_resource path="res://added/images/maxresdefault.jpg" type="Texture" id=3]
 [ext_resource path="res://Tiles/platformPack_tile011.png" type="Texture" id=4]
 [ext_resource path="res://Tile.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=6]
@@ -23,9 +23,9 @@ layer = -1
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer2"]
 margin_left = 6.0
-margin_top = -222.0
+margin_top = -106.0
 margin_right = 1926.0
-margin_bottom = 858.0
+margin_bottom = 974.0
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 2
@@ -34,10 +34,10 @@ __meta__ = {
 }
 
 [node name="Tile" parent="." instance=ExtResource( 5 )]
-position = Vector2( 192, 512 )
+position = Vector2( 192, 576 )
 
 [node name="Tile28" parent="." instance=ExtResource( 5 )]
-position = Vector2( 79, 365 )
+position = Vector2( 103, 444 )
 
 [node name="Tile2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 256, 320 )
@@ -70,10 +70,10 @@ position = Vector2( 1151, 576 )
 position = Vector2( 968, 393 )
 
 [node name="Tile7" parent="." instance=ExtResource( 5 )]
-position = Vector2( 704, 256 )
+position = Vector2( 768, 256 )
 
 [node name="Tile8" parent="." instance=ExtResource( 5 )]
-position = Vector2( 768, 256 )
+position = Vector2( 575, 320 )
 
 [node name="Tile9" parent="." instance=ExtResource( 5 )]
 position = Vector2( 832, 256 )
@@ -121,7 +121,7 @@ position = Vector2( 768, 576 )
 position = Vector2( 960, 576 )
 
 [node name="Tile32" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1322, 153 )
+position = Vector2( 1528, 576 )
 
 [node name="Tile33" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1169, 270 )
@@ -148,7 +148,7 @@ position = Vector2( 2039, 388 )
 position = Vector2( 1467, 388 )
 
 [node name="Tile41" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1595, 388 )
+position = Vector2( 1592, 577 )
 
 [node name="Tile47" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1976, 388 )
@@ -157,7 +157,7 @@ position = Vector2( 1976, 388 )
 position = Vector2( 1785, 388 )
 
 [node name="Tile42" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1658, 388 )
+position = Vector2( 1695, 496 )
 
 [node name="Tile46" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1912, 388 )
@@ -166,7 +166,7 @@ position = Vector2( 1912, 388 )
 position = Vector2( 1849, 388 )
 
 [node name="Tile43" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1722, 388 )
+position = Vector2( 2043, 146 )
 
 [node name="Tile37" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1339, 388 )
@@ -210,19 +210,19 @@ position = Vector2( 768, 160 )
 position = Vector2( 1169, 181 )
 
 [node name="Coin4" parent="." instance=ExtResource( 7 )]
-position = Vector2( 970, 315 )
+position = Vector2( 2044, 56 )
 
 [node name="Coin6" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1847, 163 )
 
 [node name="Coin5" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1327, 71 )
+position = Vector2( 1565, 488 )
 
 [node name="Coin8" parent="." instance=ExtResource( 7 )]
-position = Vector2( 190, 450 )
+position = Vector2( 103, 357 )
 
 [node name="Coin7" parent="." instance=ExtResource( 7 )]
-position = Vector2( 79, 291 )
+position = Vector2( 415, 474 )
 
 [node name="Enemy" parent="." instance=ExtResource( 8 )]
 position = Vector2( 288, 512 )
@@ -235,7 +235,7 @@ speed = 500
 moveDist = 600
 
 [node name="Enemy2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 686, 508 )
+position = Vector2( 395, 251 )
 speed = 500
 moveDist = 600
 
