@@ -1,7 +1,8 @@
 extends Camera2D
 
-onready var player = get_node("/root/MainScene/Player")
+onready var player = get_node("res://Player.tscn")
 
 func _process(delta):
-	position.x = player.position.x
+	#position.x = player.position.x
+	pass
 

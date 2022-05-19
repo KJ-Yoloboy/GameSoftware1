@@ -10,7 +10,7 @@ var vel = Vector2()
 var grounded = false
 
 onready var sprite = $Sprite
-onready var ui = get_node("/root/MainScene/CanvasLayer/UI")
+onready var ui = get_node("../CanvasLayer/UI")
 
 # physics loop - same as Unity's "FixedUpdate" function
 func _physics_process(delta):
