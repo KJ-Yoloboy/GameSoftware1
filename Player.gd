@@ -12,6 +12,14 @@ var grounded = false
 onready var sprite = $Sprite
 onready var ui = get_node("../CanvasLayer/UI")
 
+
+func _ready():
+	var file = File.new()
+	file.open("user://save_game.dat", File.READ)
+	var content = file.get_as_text()
+	score = int(content)
+	file.close() 
+	
 # physics loop - same as Unity's "FixedUpdate" function
 func _physics_process(delta):
 	if (position.y > 875):
@@ -58,10 +66,22 @@ func _physics_process(delta):
 
 # called when we run into a coin
 func collect_coin (value):
-	
+	var file = File.new()
+	file.open("user://save_game.dat", File.READ)
+	var content = file.get_as_text()
+	file.close()
+	score = int(content)
 	score += value
+
+	file.open("user://save_game.dat", File.WRITE)
+	file.store_string(String(score))
+	file.close()
+
 	ui.set_score_text(score)
 
 func die ():
-	
+	var file = File.new()
+	file.open("user://save_game.dat", File.WRITE)
+	file.store_string("0")
+	file.close()
 	get_tree().reload_current_scene()

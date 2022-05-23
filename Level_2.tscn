@@ -2,14 +2,14 @@
 
 [ext_resource path="res://CameraController.gd" type="Script" id=1]
 [ext_resource path="res://added/audio/videoplayback.mp3" type="AudioStream" id=2]
-[ext_resource path="res://added/images/maxresdefault.jpg" type="Texture" id=3]
-[ext_resource path="res://Tiles/platformPack_tile011.png" type="Texture" id=4]
+[ext_resource path="res://added/parallax/parallax-00.png" type="Texture" id=3]
+[ext_resource path="res://Tiles/platformPack_tile012.png" type="Texture" id=4]
 [ext_resource path="res://Tile.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Coin.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Font/new_dynamicfont.tres" type="DynamicFont" id=9]
-[ext_resource path="res://CollisionShape2D.gd" type="Script" id=10]
+[ext_resource path="res://Portal2.gd" type="Script" id=10]
 [ext_resource path="res://Coin/Coin.png" type="Texture" id=11]
 [ext_resource path="res://UI.gd" type="Script" id=12]
 
@@ -22,10 +22,12 @@ radius = 34.9203
 layer = -1
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer2"]
-margin_left = 6.0
-margin_top = -106.0
-margin_right = 1926.0
-margin_bottom = 974.0
+anchor_top = 0.005
+anchor_bottom = 0.005
+margin_left = 14.0
+margin_top = -3.0
+margin_right = 1934.0
+margin_bottom = 1077.0
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 2
@@ -61,7 +63,7 @@ position = Vector2( 1024, 576 )
 position = Vector2( 1088, 576 )
 
 [node name="Tile49" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1850, 224 )
+position = Vector2( 1978, 575 )
 
 [node name="Tile27" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1151, 576 )
@@ -124,7 +126,7 @@ position = Vector2( 960, 576 )
 position = Vector2( 1528, 576 )
 
 [node name="Tile33" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1169, 270 )
+position = Vector2( 1136, 275 )
 
 [node name="Tile31" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1278, 576 )
@@ -136,28 +138,28 @@ position = Vector2( 1214, 576 )
 position = Vector2( 1340, 576 )
 
 [node name="Tile38" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1403, 388 )
+position = Vector2( 1340, 307 )
 
 [node name="Tile40" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1531, 388 )
+position = Vector2( 1531, 307 )
 
 [node name="Tile48" parent="." instance=ExtResource( 5 )]
 position = Vector2( 2039, 388 )
 
 [node name="Tile39" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1467, 388 )
+position = Vector2( 1467, 307 )
 
 [node name="Tile41" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1592, 577 )
+position = Vector2( 1592, 576 )
 
 [node name="Tile47" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1976, 388 )
+position = Vector2( 2549, 640 )
 
 [node name="Tile44" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1785, 388 )
 
 [node name="Tile42" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1695, 496 )
+position = Vector2( 1699, 495 )
 
 [node name="Tile46" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1912, 388 )
@@ -166,10 +168,10 @@ position = Vector2( 1912, 388 )
 position = Vector2( 1849, 388 )
 
 [node name="Tile43" parent="." instance=ExtResource( 5 )]
-position = Vector2( 2043, 146 )
+position = Vector2( 2486, 640 )
 
 [node name="Tile37" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1339, 388 )
+position = Vector2( 1403, 307 )
 
 [node name="Tile50" parent="." instance=ExtResource( 5 )]
 position = Vector2( 2103, 451 )
@@ -204,16 +206,16 @@ position = Vector2( 301.2, 175 )
 position = Vector2( 512, 224 )
 
 [node name="Coin2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 768, 160 )
+position = Vector2( 643, 477 )
 
 [node name="Coin3" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1169, 181 )
+position = Vector2( 1136, 186 )
 
 [node name="Coin4" parent="." instance=ExtResource( 7 )]
-position = Vector2( 2044, 56 )
+position = Vector2( 2019, 96 )
 
 [node name="Coin6" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1847, 163 )
+position = Vector2( 1979, 494 )
 
 [node name="Coin5" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1565, 488 )
@@ -230,12 +232,12 @@ speed = 500
 moveDist = 600
 
 [node name="Enemy3" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1383, 322 )
+position = Vector2( 1438, 240 )
 speed = 500
 moveDist = 600
 
 [node name="Enemy2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 395, 251 )
+position = Vector2( 2567, 556 )
 speed = 500
 moveDist = 600
 
@@ -275,7 +277,7 @@ stream = ExtResource( 2 )
 autoplay = true
 
 [node name="Coin9" parent="." instance=ExtResource( 7 )]
-position = Vector2( 2549, 444 )
+position = Vector2( 3030, 316 )
 
 [node name="Tile54" parent="." instance=ExtResource( 5 )]
 position = Vector2( 2675, 640 )
@@ -287,13 +289,13 @@ position = Vector2( 2803, 640 )
 position = Vector2( 2867, 640 )
 
 [node name="Tile57" parent="." instance=ExtResource( 5 )]
-position = Vector2( 2931, 450 )
+position = Vector2( 3033, 519 )
 
 [node name="Tile59" parent="." instance=ExtResource( 5 )]
 position = Vector2( 3250, 450 )
 
 [node name="Tile58" parent="." instance=ExtResource( 5 )]
-position = Vector2( 2995, 450 )
+position = Vector2( 2612, 640 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 3474, 284 )
@@ -304,7 +306,7 @@ texture = ExtResource( 4 )
 position = Vector2( -1512.49, -118.797 )
 scale = Vector2( 0.435374, 0.418301 )
 
-[node name="Portal" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+[node name="Portal2" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
 position = Vector2( 3474, 284 )
 scale = Vector2( 2.29688, 2.39063 )
 shape = SubResource( 1 )
@@ -313,4 +315,4 @@ script = ExtResource( 10 )
 [node name="Tile36" parent="." instance=ExtResource( 5 )]
 position = Vector2( 2739, 640 )
 
-[connection signal="body_entered" from="Sprite/StaticBody2D" to="Sprite/StaticBody2D/Portal" method="_on_StaticBody2D_body_entered"]
+[connection signal="body_entered" from="Sprite/StaticBody2D" to="Sprite/StaticBody2D/Portal2" method="_on_StaticBody2D_body_entered"]

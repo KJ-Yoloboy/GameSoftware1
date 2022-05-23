@@ -4,8 +4,15 @@ onready var scoreText = get_node("ScoreText")
 
 func _ready():
 	
-	scoreText.text = "0"
+	var file = File.new()
+	file.open("user://save_game.dat", File.READ)
+	var content = file.get_as_text()
+	file.close()
+	scoreText.text = str(content)
 
 func set_score_text (score):
-	
-	scoreText.text = str(score)
+	var file = File.new()
+	file.open("user://save_game.dat", File.READ)
+	var content = file.get_as_text()
+	file.close()
+	scoreText.text = str(content)

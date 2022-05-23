@@ -22,14 +22,14 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "jump",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 11 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "jump",
 "speed": 5.0
 } ]
 
@@ -47,10 +47,12 @@ position = Vector2( 7, -1 )
 layer = -1
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer2"]
+anchor_top = -0.0133333
+anchor_bottom = -0.0133333
 margin_left = 6.0
-margin_top = -222.0
+margin_top = -3.0
 margin_right = 1926.0
-margin_bottom = 858.0
+margin_bottom = 1077.0
 texture = ExtResource( 7 )
 expand = true
 stretch_mode = 2
@@ -115,11 +117,11 @@ position = Vector2( 448, 576 )
 [node name="Tile20" parent="." instance=ExtResource( 1 )]
 position = Vector2( 640, 576 )
 
-[node name="Tile23" parent="." instance=ExtResource( 1 )]
-position = Vector2( 832, 576 )
-
 [node name="Tile11" parent="." instance=ExtResource( 1 )]
 position = Vector2( 128, 576 )
+
+[node name="Tile23" parent="." instance=ExtResource( 1 )]
+position = Vector2( 832, 576 )
 
 [node name="Tile15" parent="." instance=ExtResource( 1 )]
 position = Vector2( 320, 576 )
@@ -327,7 +329,7 @@ texture = ExtResource( 9 )
 position = Vector2( -1512.49, -118.797 )
 scale = Vector2( 0.435374, 0.418301 )
 
-[node name="Portal" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+[node name="Portal1" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
 position = Vector2( 3474, 284 )
 scale = Vector2( 2.29688, 2.39063 )
 shape = SubResource( 3 )
@@ -337,4 +339,4 @@ script = ExtResource( 10 )
 position = Vector2( 2739, 640 )
 
 [connection signal="body_entered" from="Enemy2" to="Camera" method="_on_Enemy2_body_entered"]
-[connection signal="body_entered" from="Sprite/StaticBody2D" to="Sprite/StaticBody2D/Portal" method="_on_StaticBody2D_body_entered"]
+[connection signal="body_entered" from="Sprite/StaticBody2D" to="Sprite/StaticBody2D/Portal1" method="_on_StaticBody2D_body_entered"]

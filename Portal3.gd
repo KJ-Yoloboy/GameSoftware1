@@ -8,7 +8,7 @@ extends CollisionShape2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,6 +18,4 @@ func _ready():
 
 func _on_StaticBody2D_body_entered(body):
 		if body.name == "Player":
-			#$ScoreLabel.text = str(Globals.Score):
-			get_tree().change_scene("res://Level_2.tscn")
-
+			get_tree().change_scene("res://Menu.tscn")
