@@ -13,7 +13,7 @@ func _ready():
 	var content = file.get_as_text()
 	file.close()
 
-	text = text.insert(33, str(content))
+	text = text.insert(35, str(content))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
